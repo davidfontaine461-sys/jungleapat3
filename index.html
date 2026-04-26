@@ -172,6 +172,43 @@
       font-weight: 500;
     }
 
+    /* ── Réseaux sociaux footer ── */
+    .footer-social {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+    .footer-social-link {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--c-ink-soft);
+      text-decoration: none;
+      border: 1px solid rgba(26, 58, 46, 0.2);
+      border-radius: 4px;
+      padding: 0.2rem 0.55rem;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .footer-social-link:hover {
+      color: var(--c-jungle);
+      border-color: var(--c-jungle);
+    }
+
+    /* ── Tagline sous le H1 ── */
+    .hero-tagline {
+      font-family: var(--f-display);
+      font-size: clamp(1rem, 2vw, 1.3rem);
+      font-weight: 300;
+      color: var(--c-ink);
+      margin-top: 0.75rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.4;
+    }
+    .hero-tagline em {
+      font-style: italic;
+      color: var(--c-terracotta);
+    }
+
     /* ═══════════════════════════════════════════════
        V13 · HERO en 2 colonnes — texte + grande image
        ═══════════════════════════════════════════════ */
@@ -867,8 +904,8 @@
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": -21.3392,
-          "longitude": 55.3878
+          "latitude": -21.33920,
+          "longitude": 55.38780
         },
         "openingHoursSpecification": [
           {
@@ -913,7 +950,13 @@
           "ratingValue": "4.9",
           "bestRating": "5",
           "reviewCount": "148"
-        }
+        },
+        "sameAs": [
+          "https://maps.app.goo.gl/3u2f4X8AaPa1He429",
+          "https://www.tripadvisor.com/Attraction_Review-g17677152-d33986524-Reviews-Jungle_a_pat-La_Riviere_Saint_Louis_Arrondissement_of_Saint_Pierre.html",
+          "https://www.facebook.com/p/Jungle-%C3%A0-pat-61579385826846/",
+          "https://www.instagram.com/jungle_a_pat/"
+        ]
       },
       {
         "@type": "FAQPage",
@@ -1132,12 +1175,11 @@
       </div>
 
       <h1 class="hero-title">
-        <span class="hero-title-line hero-title-line-1">Une parenthèse</span>
-        <span class="hero-title-line hero-title-line-2">
-          <em>tropicale,</em>
-        </span>
-        <span class="hero-title-line hero-title-line-3">au cœur de La Réunion.</span>
+        <span class="hero-title-line hero-title-line-1">Jardin botanique</span>
+        <span class="hero-title-line hero-title-line-2"><em>tropical</em></span>
+        <span class="hero-title-line hero-title-line-3">à La Rivière Saint-Louis</span>
       </h1>
+      <p class="hero-tagline">Une parenthèse <em>tropicale,</em> au cœur de La Réunion</p>
 
       <p class="hero-sub">
         À La Rivière Saint-Louis, découvrez un jardin tropical d'exception.
@@ -1681,6 +1723,16 @@
             Ouvrir dans Maps
             <svg viewBox="0 0 24 24" width="12" height="12" fill="none"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3597!2d55.38780!3d-21.33920!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sJungle%20%C3%A0%20Pat'!5e0!3m2!1sfr!2sre!4v1700000000000"
+            width="100%"
+            height="350"
+            style="border:0; border-radius: 8px; margin-top: 1rem;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Localisation Jungle à Pat' sur Google Maps">
+          </iframe>
         </div>
 
         <!-- Téléphone -->
@@ -1892,6 +1944,11 @@
           La Réunion
         </address>
         <a href="tel:+262693054038" class="footer-phone">0693 05 40 38</a>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/p/Jungle-%C3%A0-pat-61579385826846/" target="_blank" rel="noopener noreferrer" class="footer-social-link">Facebook</a>
+          <a href="https://www.instagram.com/jungle_a_pat/" target="_blank" rel="noopener noreferrer" class="footer-social-link">Instagram</a>
+          <a href="https://www.tripadvisor.com/Attraction_Review-g17677152-d33986524-Reviews-Jungle_a_pat-La_Riviere_Saint_Louis_Arrondissement_of_Saint_Pierre.html" target="_blank" rel="noopener noreferrer" class="footer-social-link">TripAdvisor</a>
+        </div>
       </div>
     </div>
 
