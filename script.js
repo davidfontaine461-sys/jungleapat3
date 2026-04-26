@@ -27,6 +27,8 @@
   const header = document.getElementById('siteHeader');
   const trail = document.querySelector('.trail-path');
 
+  const backToTop = document.getElementById('backToTop');
+
   const onScroll = () => {
     const y = window.scrollY;
     if (y > 20) header.classList.add('scrolled');
@@ -37,7 +39,19 @@
       if (y > window.innerHeight * 0.5) trail.classList.add('visible');
       else trail.classList.remove('visible');
     }
+
+    // Bouton retour en haut
+    if (backToTop) {
+      if (y > 400) backToTop.classList.add('visible');
+      else backToTop.classList.remove('visible');
+    }
   };
+
+  if (backToTop) {
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
