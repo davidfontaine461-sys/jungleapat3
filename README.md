@@ -1,123 +1,134 @@
-# Jungle à Pat' — Site v2 "Carnet d'explorateur immersif"
+# 🌿 Jungle à Pat' — Guide des images
 
-Site vitrine one-page haut de gamme pour le jardin botanique Jungle à Pat', La Rivière Saint-Louis, La Réunion.
+Voici la liste complète de toutes les photos à placer dans le même dossier que ton fichier `index.html`.
 
-## ✨ Ce qui change par rapport à la v1
-
-- **Sentier animé** qui court sur toute la page (fil conducteur visuel)
-- **Rayons de lumière tropicale** qui pulsent doucement dans le hero
-- **5 feuilles flottantes** avec parallax et animation de balancement
-- **Alternance gauche/droite** des sections pour simuler la balade
-- **Cartes "featured"** avec tag ("Différenciant", "Moment fort")
-- **Galerie masonry** avec légendes qui apparaissent au hover
-- **Ruban de scotch** sur l'image du carnet (effet carnet collé)
-- **Compas animé** sur le plan du jardin
-- **Preuve sociale** avec compteur animé dans le hero
-- **Note manuscrite** "Apprécié des familles et des écoles" dans le hero
-- **Filigranes numéros de section** (01, 02, 03…) façon livre
-- **Plus d'animations subtiles** : hover, stickers flottants, pulsations
-
-## 📁 Contenu du dossier
-
-- `index.html` — structure du site
-- `style.css` — design complet (~1100 lignes)
-- `script.js` — interactions (menu mobile, reveal, parallax, compteurs)
-- `README.md` — ce fichier
-
-## 🖼️ Images à ajouter dans ce même dossier
-
-Noms EXACTS à respecter :
-
-- `jardin-1.jpg` — photo d'ambiance principale (portrait 4:5 recommandé)
-- `jardin-2.jpg` — autre vue du jardin
-- `sentier.jpg` — sentier principal
-- `coin-cafe.jpg` — coin café
-- `coin-marmaille.jpg` — coin marmaille / enfants
-- `plantes.jpg` — gros plan sur la végétation
-- `point-de-vue.jpg` — vue depuis le point de vue (paysage recommandé)
-- `carnet-pedagogique.jpg` — photo du carnet ou d'un enfant l'utilisant
-- `plan-jungle-a-pat.jpg` — le plan illustré du jardin
-- `plan-jungle-a-pat.pdf` — version PDF téléchargeable (optionnel)
-- `hero-jungle.jpg` — image pour le partage sur réseaux sociaux
-
-**Conseils photos :**
-- Compresse tes images sur [tinypng.com](https://tinypng.com) avant publication
-- Privilégie les formats **JPG** (plus légers que PNG pour les photos)
-- Taille idéale : entre **1200 et 1800 px de large**
-- Format **4:5 portrait** pour `jardin-1.jpg` (section Découvrir)
-- Format **paysage** pour la galerie et le point de vue
-
-## 🚀 Publier le site en ligne (gratuit, 2 minutes)
-
-### Méthode la plus simple : Netlify Drop
-
-1. Va sur **[app.netlify.com/drop](https://app.netlify.com/drop)**
-2. Glisse-dépose tout le dossier `jungle-a-pat-v2` sur la page
-3. Ton site est en ligne en quelques secondes avec une URL `xxx.netlify.app`
-4. Tu peux ensuite connecter ton propre nom de domaine (ex: `junglapat.re`)
-
-### Alternative : Vercel
-
-1. Crée un compte sur [vercel.com](https://vercel.com)
-2. Importe le dossier
-3. Déploiement automatique
-
-## ✏️ Modifier les textes
-
-Tous les textes sont dans `index.html`. Ouvre le fichier avec :
-- **Bloc-notes** (simple)
-- **VS Code** (recommandé, gratuit sur [code.visualstudio.com](https://code.visualstudio.com))
-- **Claude Code** (si tu es à l'aise avec le terminal)
-
-### Modifications fréquentes
-
-| Ce que tu veux changer | Où chercher |
-|---|---|
-| Numéro de téléphone | `0693 05 40 38` |
-| Adresse | `213 route Hubert Delisle` |
-| Tarifs | classe `.info-prices` (ligne ~450) |
-| Horaires | classe `.info-hours` |
-| Nom de l'équipe | `Patricia & l'équipe` (bas du CTA) |
-
-## 🎨 Changer les couleurs
-
-Tout est centralisé dans `style.css` tout en haut, dans la section `:root`. Modifie ces variables et toutes les couleurs du site s'adaptent :
-
-```css
---c-jungle: #1a3a2e;        /* Vert dominant */
---c-terracotta: #b55a3a;    /* Accents orange */
---c-cream: #f4ede0;         /* Fond principal */
---c-sand: #c9ab7c;          /* Beige/or */
-```
-
-## 📱 Tester sur mobile
-
-Dans Chrome : **clic-droit → Inspecter → icône téléphone** en haut à gauche.
-
-## ♿ Accessibilité
-
-Le site respecte :
-- `prefers-reduced-motion` (les utilisateurs sensibles aux animations)
-- Niveaux de titres sémantiques (H1, H2, H3)
-- Contrastes de couleurs conformes
-- Navigation clavier
-- Focus visibles
-- Alt text sur toutes les images
-- ARIA labels sur les boutons importants
-
-## 🔍 SEO
-
-Le site est optimisé pour ces mots-clés :
-- jardin botanique La Réunion
-- jardin tropical La Réunion
-- sortie famille La Réunion
-- visite jardin La Rivière Saint-Louis
-- sortie scolaire nature La Réunion
-
-## 🧰 Pas de framework
-
-Pas de React, pas de jQuery, pas de build. C'est du **HTML / CSS / JS pur**, qui marche partout, se charge vite, et se modifie facilement.
+> ⚠️ **Important** : respecte bien les **noms exacts** (minuscules, tirets, extension `.jpeg`).
+> Si une image manque, la section correspondante sera vide ou affichera un carré gris.
 
 ---
 
-🌿 Bon lancement Nathan ! Si tu veux faire évoluer le site par la suite, il suffit de demander.
+## 📸 Images à fournir (14 fichiers)
+
+### 🏞️ HERO (image principale en haut du site)
+| Nom du fichier | Description | Format idéal |
+|---|---|---|
+| `hero-jungle.jpeg` | **Belle photo principale du jardin** — celle qui fait l'effet wow dès l'arrivée sur le site | Portrait 4:5 (ex: 1200×1500 px) |
+
+---
+
+### 📜 SECTION 1 — L'histoire du jardin
+| Nom du fichier | Description | Format idéal |
+|---|---|---|
+| `clement-1990.jpeg` | Portrait de Clément Fontaine il y a 35 ans | Carré 1:1 (ex: 800×800 px) |
+| `jardin-1990.jpeg` | Le terrain en 1990, avant les plantations (hautes herbes) | Carré 1:1 (ex: 800×800 px) |
+
+---
+
+### 🗺️ SECTION 2 — L'expérience (5 étapes + 2 polaroids)
+| Nom du fichier | Description | Format idéal |
+|---|---|---|
+| `pause-gourmande.jpeg` | Photo du coin café / pause gourmande | Paysage 4:3 (ex: 1200×900 px) |
+| `coin-marmaille.jpeg` | Photo du coin marmaille / enfants | Paysage 4:3 (ex: 1200×900 px) |
+
+---
+
+### 📖 SECTION 3 — Le carnet pédagogique
+| Nom du fichier | Description | Format idéal |
+|---|---|---|
+| `carnet-pedagogique.jpeg` | Photo du carnet pédagogique ou d'un enfant en train de l'utiliser | Portrait 4:5 (ex: 1319×1664 px) |
+
+---
+
+### 📷 SECTION 5 — Galerie (7 photos)
+| Nom du fichier | Description | Format idéal |
+|---|---|---|
+| `jardin-1.jpeg` | Vue d'ensemble du jardin | Paysage 16:9 ou portrait |
+| `sentier.jpeg` | Sentier principal | Paysage |
+| `coin-cafe.jpeg` | Coin café | Paysage |
+| `plantes.jpeg` | Gros plan sur les plantes tropicales | Paysage ou carré |
+| `point-de-vue.jpeg` | Panorama depuis le point de vue | Paysage 16:9 (large) |
+| `coin-marmaille.jpeg` | *(déjà utilisé en section 2, même fichier)* | — |
+| `jardin-2.jpeg` | Autre vue du jardin | Paysage ou portrait |
+
+---
+
+### 🗺️ SECTION 6 — Le plan du jardin
+| Nom du fichier | Description | Format idéal |
+|---|---|---|
+| `plan-jungle-a-pat.jpeg` | Le plan illustré du jardin | Portrait 2:3 (ex: 1024×1536 px) |
+| `plan-jungle-a-pat.pdf` | *(optionnel)* Version PDF téléchargeable du plan | — |
+
+---
+
+## ✅ Récapitulatif des 13 fichiers `.jpeg` uniques
+
+```
+hero-jungle.jpeg
+clement-1990.jpeg
+jardin-1990.jpeg
+carnet-pedagogique.jpeg
+pause-gourmande.jpeg
+coin-marmaille.jpeg
+coin-cafe.jpeg
+sentier.jpeg
+plantes.jpeg
+point-de-vue.jpeg
+jardin-1.jpeg
+jardin-2.jpeg
+plan-jungle-a-pat.jpeg
+```
+
+Plus éventuellement : `plan-jungle-a-pat.pdf` si tu veux proposer le téléchargement du plan.
+
+---
+
+## 💡 Conseils techniques
+
+### Qualité et poids
+- **Compresse tes photos** avant de les mettre en ligne sur [tinypng.com](https://tinypng.com) (gratuit, réduit le poids de 60% sans perte visible)
+- Cible **~500 Ko par photo maximum** pour un site rapide
+
+### Dimensions
+- **Largeur minimum conseillée** : 1200 px (pour un affichage net sur grands écrans)
+- **Largeur maximum utile** : 2400 px (inutile d'aller au-delà, ça alourdit pour rien)
+
+### Format `.jpeg` vs `.jpg`
+Les deux sont **strictement identiques** techniquement. Ton site utilise `.jpeg`, donc tes fichiers doivent terminer par `.jpeg`. Pour renommer sur Windows :
+1. Clique sur le fichier → `F2` pour renommer
+2. Change l'extension de `.jpg` en `.jpeg`
+3. Si Windows te demande confirmation, dis **oui**
+
+### Astuce
+Si tu as une photo que tu veux utiliser mais qu'elle n'a pas les bonnes dimensions (ex: elle est carrée et il faut du paysage), utilise **Canva** ou **Photopea** (gratuit) pour la recadrer proprement.
+
+---
+
+## 🗂️ Arborescence de ton dossier
+
+Voilà à quoi ça doit ressembler :
+
+```
+📁 jungle-a-pat/
+├── 📄 index.html
+├── 📄 style.css
+├── 📄 script.js
+├── 📄 README.md
+├── 🖼️ hero-jungle.jpeg
+├── 🖼️ clement-1990.jpeg
+├── 🖼️ jardin-1990.jpeg
+├── 🖼️ carnet-pedagogique.jpeg
+├── 🖼️ pause-gourmande.jpeg
+├── 🖼️ coin-marmaille.jpeg
+├── 🖼️ coin-cafe.jpeg
+├── 🖼️ sentier.jpeg
+├── 🖼️ plantes.jpeg
+├── 🖼️ point-de-vue.jpeg
+├── 🖼️ jardin-1.jpeg
+├── 🖼️ jardin-2.jpeg
+├── 🖼️ plan-jungle-a-pat.jpeg
+└── 📄 plan-jungle-a-pat.pdf (optionnel)
+```
+
+---
+
+🌿 Bon lancement Nathan !
