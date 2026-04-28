@@ -1920,6 +1920,22 @@ h1 em, h2 em, h3 em {
 }
 
 /* ═══════════════════════════════════════════════════════
+   20b · STATUT D'OUVERTURE DYNAMIQUE
+   ═══════════════════════════════════════════════════════ */
+.open-status.is-open  { color: #2d8659; }
+.open-status.is-closed { color: #888; }
+
+/* Adapte la pastille info-status quand le jardin est fermé */
+.info-status:has(.open-status.is-closed) {
+  background: rgba(136, 136, 136, 0.1);
+  color: #888;
+}
+.info-status:has(.open-status.is-closed)::before {
+  background: #888;
+  animation: none;
+}
+
+/* ═══════════════════════════════════════════════════════
    21 · ACCESSIBILITÉ — prefers-reduced-motion
    ═══════════════════════════════════════════════════════ */
 @media (prefers-reduced-motion: reduce) {

@@ -252,4 +252,98 @@
     });
   });
 
+  /* ──────────────────────────────────────────────
+     Statut d'ouverture dynamique
+     Timezone : Indian/Reunion (UTC+4, pas de DST)
+     ────────────────────────────────────────────── */
+  const PUBLIC_HOLIDAYS_REUNION = new Set([
+    // 2026
+    '2026-01-01', '2026-04-06', '2026-05-01', '2026-05-08',
+    '2026-05-14', '2026-05-25', '2026-07-14', '2026-08-15',
+    '2026-11-01', '2026-11-11', '2026-12-20', '2026-12-25',
+    // 2027
+    '2027-01-01', '2027-03-29', '2027-05-01', '2027-05-06',
+    '2027-05-08', '2027-05-17', '2027-07-14', '2027-08-15',
+    '2027-11-01', '2027-11-11', '2027-12-20', '2027-12-25',
+  ]);
+
+  // 0=Dim, 1=Lun, 2=Mar, 3=Mer, 4=Jeu, 5=Ven, 6=Sam · null = fermé
+  const OPENING_HOURS = {
+    0: { open: 9, close: 16 },
+    1: null,
+    2: null,
+    3: { open: 9, close: 16 },
+    4: { open: 9, close: 14 },
+    5: { open: 9, close: 14 },
+    6: { open: 9, close: 16 },
+  };
+
+  const DAY_NAMES_FR = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
+
+  function getNextOpenDayName(year, month, dayNum) {
+    const base = Date.UTC(year, month - 1, dayNum);
+    for (let i = 1; i <= 14; i++) {
+      const d = new Date(base + i * 86400000);
+      const y = d.getUTCFullYear();
+      const m = String(d.getUTCMonth() + 1).padStart(2, '0');
+      const dd = String(d.getUTCDate()).padStart(2, '0');
+      const key = `${y}-${m}-${dd}`;
+      const dow = d.getUTCDay();
+      if (!PUBLIC_HOLIDAYS_REUNION.has(key) && OPENING_HOURS[dow] !== null) {
+        return DAY_NAMES_FR[dow];
+      }
+    }
+    return null;
+  }
+
+  function updateOpenStatus() {
+    const elements = document.querySelectorAll('.open-status');
+    if (!elements.length) return;
+
+    // Réunion = UTC+4, permanent (pas de DST)
+    const rd = new Date(Date.now() + 4 * 3600000);
+    const dow   = rd.getUTCDay();
+    const hour  = rd.getUTCHours();
+    const min   = rd.getUTCMinutes();
+    const year  = rd.getUTCFullYear();
+    const month = rd.getUTCMonth() + 1;
+    const dayNum = rd.getUTCDate();
+    const dateKey = `${year}-${String(month).padStart(2, '0')}-${String(dayNum).padStart(2, '0')}`;
+
+    let text, isOpen;
+
+    if (PUBLIC_HOLIDAYS_REUNION.has(dateKey)) {
+      text = 'Fermé (jour férié)';
+      isOpen = false;
+    } else {
+      const hours = OPENING_HOURS[dow];
+      if (hours === null) {
+        text = 'Fermé aujourd\'hui';
+        isOpen = false;
+      } else {
+        const t = hour + min / 60;
+        if (t >= hours.open && t < hours.close) {
+          text = `Ouvert · ${hours.open}h–${hours.close}h`;
+          isOpen = true;
+        } else if (t < hours.open) {
+          text = `Ouvre à ${hours.open}h aujourd'hui`;
+          isOpen = false;
+        } else {
+          const next = getNextOpenDayName(year, month, dayNum);
+          text = next ? `Fermé · Réouvre ${next} à 9h` : 'Fermé';
+          isOpen = false;
+        }
+      }
+    }
+
+    elements.forEach(el => {
+      el.textContent = text;
+      el.classList.toggle('is-open', isOpen);
+      el.classList.toggle('is-closed', !isOpen);
+    });
+  }
+
+  updateOpenStatus();
+  setInterval(updateOpenStatus, 60000);
+
 })();
