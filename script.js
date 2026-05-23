@@ -278,6 +278,17 @@
     6: { open: 9, close: 16 },
   };
 
+  // ═══════════════════════════════════════════
+  // FERMETURES EXCEPTIONNELLES — TEMPORAIRE
+  // À retirer / mettre à jour selon les besoins.
+  // ═══════════════════════════════════════════
+  const EXCEPTIONAL_CLOSURES = new Set([
+    '2026-05-24', // Fermeture exceptionnelle dimanche 24 mai 2026
+  ]);
+  // ═══════════════════════════════════════════
+  // FIN FERMETURES EXCEPTIONNELLES
+  // ═══════════════════════════════════════════
+
   const DAY_NAMES_FR = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
 
   function getNextOpenDayName(year, month, dayNum) {
@@ -289,7 +300,7 @@
       const dd = String(d.getUTCDate()).padStart(2, '0');
       const key = `${y}-${m}-${dd}`;
       const dow = d.getUTCDay();
-      if (!PUBLIC_HOLIDAYS_REUNION.has(key) && OPENING_HOURS[dow] !== null) {
+      if (!PUBLIC_HOLIDAYS_REUNION.has(key) && !EXCEPTIONAL_CLOSURES.has(key) && OPENING_HOURS[dow] !== null) {
         return DAY_NAMES_FR[dow];
       }
     }
@@ -315,6 +326,9 @@
     if (PUBLIC_HOLIDAYS_REUNION.has(dateKey)) {
       text = 'Fermé (jour férié)';
       isOpen = false;
+    } else if (EXCEPTIONAL_CLOSURES.has(dateKey)) {
+      text = 'Fermé aujourd\'hui';
+      isOpen = false;
     } else {
       const hours = OPENING_HOURS[dow];
       if (hours === null) {
@@ -335,6 +349,15 @@
         }
       }
     }
+
+    // ═══ Fermeture exceptionnelle demain → suffixe d'alerte (temporaire) ═══
+    // Ajouté seulement si le badge n'indique pas déjà un état "Fermé" (sinon redondant avec "Réouvre…").
+    const tomorrow = new Date(Date.UTC(year, month - 1, dayNum) + 86400000);
+    const tomorrowKey = `${tomorrow.getUTCFullYear()}-${String(tomorrow.getUTCMonth() + 1).padStart(2, '0')}-${String(tomorrow.getUTCDate()).padStart(2, '0')}`;
+    if (EXCEPTIONAL_CLOSURES.has(tomorrowKey) && !text.startsWith('Fermé')) {
+      text += ' · Fermé demain';
+    }
+    // ═══ Fin suffixe d'alerte ═══
 
     elements.forEach(el => {
       el.textContent = text;
