@@ -1092,6 +1092,74 @@
 <body>
 
   <!-- ═══════════════════════════════════════════
+       BANNIÈRE FERMETURE EXCEPTIONNELLE — TEMPORAIRE
+       À retirer après le 24/05/2026 (auto-masquée le 25/05 00h00 heure Réunion UTC+4)
+       Bloc autonome : style + HTML + script. Suppression = retirer tout entre les deux commentaires "BANNIÈRE FERMETURE EXCEPTIONNELLE".
+       ═══════════════════════════════════════════ -->
+  <style>
+    #banniere-fermeture-temp {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      background: linear-gradient(90deg, var(--c-terracotta, #b55a3a) 0%, var(--c-terracotta-deep, #8e3e22) 100%);
+      color: #ffffff;
+      font-family: var(--f-body, 'Inter Tight', system-ui, sans-serif);
+      font-weight: 600;
+      text-align: center;
+      padding: 14px 20px;
+      box-shadow: 0 2px 14px -2px rgba(26, 58, 46, 0.28);
+      font-size: 0.95rem;
+      line-height: 1.45;
+      letter-spacing: 0.005em;
+    }
+    #banniere-fermeture-temp .icone-alerte {
+      display: inline-block;
+      margin-right: 8px;
+      font-size: 1.1em;
+      vertical-align: -2px;
+    }
+    #banniere-fermeture-temp strong { font-weight: 700; }
+    @media (max-width: 640px) {
+      #banniere-fermeture-temp {
+        font-size: 0.82rem;
+        padding: 10px 14px;
+      }
+    }
+  </style>
+  <div id="banniere-fermeture-temp" role="alert" aria-live="polite">
+    <span class="icone-alerte" aria-hidden="true">⚠️</span>
+    <strong>Fermeture exceptionnelle ce dimanche 24 mai 2026</strong> — Réouverture mercredi 27 mai aux horaires habituels
+  </div>
+  <script>
+    (function() {
+      var maintenant = new Date();
+      var fin = new Date('2026-05-25T00:00:00+04:00');
+      var banniere = document.getElementById('banniere-fermeture-temp');
+      if (maintenant >= fin) {
+        if (banniere) banniere.style.display = 'none';
+        return;
+      }
+      function ajusterHeader() {
+        var header = document.getElementById('siteHeader');
+        if (header && banniere) {
+          header.style.top = banniere.offsetHeight + 'px';
+        }
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', ajusterHeader);
+      } else {
+        ajusterHeader();
+      }
+      window.addEventListener('resize', ajusterHeader);
+    })();
+  </script>
+  <!-- ═══════════════════════════════════════════
+       FIN BANNIÈRE FERMETURE EXCEPTIONNELLE
+       ═══════════════════════════════════════════ -->
+
+  <!-- ═══════════════════════════════════════════
        SVG DEFS GLOBAUX (filtres, patterns, gradients)
        ═══════════════════════════════════════════ -->
   <svg class="svg-defs" aria-hidden="true">
