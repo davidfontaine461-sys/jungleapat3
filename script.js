@@ -284,6 +284,10 @@
   // ═══════════════════════════════════════════
   const EXCEPTIONAL_CLOSURES = new Set([
     '2026-05-24', // Fermeture exceptionnelle dimanche 24 mai 2026
+    // ── Congés annuels : du 22 juin au 2 juillet 2026 (réouverture le 3 juillet) ──
+    '2026-06-22', '2026-06-23', '2026-06-24', '2026-06-25', '2026-06-26',
+    '2026-06-27', '2026-06-28', '2026-06-29', '2026-06-30',
+    '2026-07-01', '2026-07-02',
   ]);
   // ═══════════════════════════════════════════
   // FIN FERMETURES EXCEPTIONNELLES
