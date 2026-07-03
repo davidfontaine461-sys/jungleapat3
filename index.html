@@ -425,94 +425,6 @@
     .hero-image-frame::before { top: 4px; left: 4px; }
     .hero-image-frame::after { top: 4px; right: 4px; }
 
-    /* ═══════════════════════════════════════════════════════
-       POST-IT CONGÉS ANNUELS — TEMPORAIRE
-       À retirer après la réouverture (03/07/2026) :
-       supprimer ce bloc CSS + le <aside class="hero-postit">.
-       ═══════════════════════════════════════════════════════ */
-    .hero-postit {
-      position: absolute;
-      top: calc(var(--header-h) + 1.1rem);
-      right: 2.25rem;
-      z-index: 20;
-      width: 232px;
-      padding: 1.6rem 1.3rem 1.4rem;
-      background: linear-gradient(165deg, #fef3a3 0%, #fde047 100%);
-      color: #4a3a10;
-      border-radius: 3px;
-      box-shadow: 0 16px 32px -10px rgba(42, 24, 16, 0.38), 0 2px 6px rgba(0, 0, 0, 0.12);
-      transform: rotate(3deg);
-      transform-origin: top center;
-      opacity: 0;
-      animation: postitIn 0.9s 0.6s var(--ease-bounce) forwards;
-    }
-    /* Ruban adhésif */
-    .hero-postit::before {
-      content: '';
-      position: absolute;
-      top: -11px;
-      left: 50%;
-      transform: translateX(-50%) rotate(-2deg);
-      width: 92px;
-      height: 26px;
-      background: rgba(255, 255, 255, 0.45);
-      border: 1px solid rgba(255, 255, 255, 0.55);
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
-    }
-    .hero-postit-eyebrow {
-      display: block;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--c-terracotta-deep);
-      margin-bottom: 0.3rem;
-    }
-    .hero-postit-title {
-      font-family: var(--f-hand);
-      font-size: 1.95rem;
-      line-height: 1.02;
-      font-weight: 700;
-      margin: 0 0 0.5rem;
-      color: #3a2d08;
-    }
-    .hero-postit-dates {
-      font-family: var(--f-display);
-      font-size: 1.02rem;
-      font-weight: 600;
-      line-height: 1.3;
-      margin: 0;
-    }
-    .hero-postit-reopen {
-      margin: 0.5rem 0 0;
-      font-size: 0.84rem;
-      line-height: 1.3;
-      color: #5a4a18;
-    }
-    .hero-postit-reopen strong { color: #3a2d08; }
-    @keyframes postitIn {
-      from { opacity: 0; transform: rotate(3deg) translateY(-26px) scale(0.9); }
-      to   { opacity: 1; transform: rotate(3deg) translateY(0) scale(1); }
-    }
-    @media (max-width: 1100px) {
-      .hero-postit {
-        top: calc(var(--header-h) + 0.6rem);
-        right: 1.1rem;
-        width: 200px;
-        padding: 1.3rem 1.05rem 1.15rem;
-      }
-      .hero-postit-title { font-size: 1.7rem; }
-    }
-    @media (max-width: 600px) {
-      .hero-postit {
-        left: 0;
-        right: 0;
-        margin-inline: auto;
-        width: min(80vw, 244px);
-      }
-    }
-    /* ═══ FIN POST-IT CONGÉS ═══ */
-
     /* ── Responsive ── */
     @media (max-width: 1100px) {
       .hero-inner {
@@ -1333,15 +1245,6 @@
        HERO — Immersif avec lumière, feuilles, vivant
        ═══════════════════════════════════════════ -->
   <section class="hero" id="hero">
-
-    <!-- ═══ POST-IT CONGÉS ANNUELS — TEMPORAIRE (à retirer après le 03/07/2026) ═══ -->
-    <aside class="hero-postit" role="note" aria-label="Information : fermeture pour congés annuels">
-      <span class="hero-postit-eyebrow">Information</span>
-      <p class="hero-postit-title">Congés annuels</p>
-      <p class="hero-postit-dates">Fermé du 22 juin<br>au 2 juillet</p>
-      <p class="hero-postit-reopen">Réouverture le <strong>vendredi 3 juillet</strong> dès 9h 🌿</p>
-    </aside>
-    <!-- ═══ FIN POST-IT CONGÉS ═══ -->
 
     <!-- Dégradé + rayons de lumière -->
     <div class="hero-atmosphere" aria-hidden="true">
