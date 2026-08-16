@@ -283,21 +283,25 @@
   // À retirer / mettre à jour selon les besoins.
   // ═══════════════════════════════════════════
   const EXCEPTIONAL_CLOSURES = new Set([
-    '2026-05-24', // Fermeture exceptionnelle dimanche 24 mai 2026
-    // ── Congés annuels : du 22 juin au 2 juillet 2026 (réouverture le 3 juillet) ──
-    '2026-06-22', '2026-06-23', '2026-06-24', '2026-06-25', '2026-06-26',
-    '2026-06-27', '2026-06-28', '2026-06-29', '2026-06-30',
-    '2026-07-01', '2026-07-02',
+    // ── Congés annuels : du 17 août au 4 septembre 2026 (réouverture le 5 septembre) ──
+    '2026-08-17', '2026-08-18', '2026-08-19', '2026-08-20', '2026-08-21',
+    '2026-08-22', '2026-08-23', '2026-08-24', '2026-08-25', '2026-08-26',
+    '2026-08-27', '2026-08-28', '2026-08-29', '2026-08-30', '2026-08-31',
+    '2026-09-01', '2026-09-02', '2026-09-03', '2026-09-04',
   ]);
   // ═══════════════════════════════════════════
   // FIN FERMETURES EXCEPTIONNELLES
   // ═══════════════════════════════════════════
 
   const DAY_NAMES_FR = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
+  const MONTH_NAMES_FR = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];
 
+  // Fenêtre de recherche large (45 j) pour couvrir les fermetures annuelles prolongées.
+  // Au-delà de 7 jours, on affiche une date complète plutôt qu'un simple jour de la
+  // semaine (sinon "Réouvre Samedi" serait ambigu sur plusieurs semaines).
   function getNextOpenDayName(year, month, dayNum) {
     const base = Date.UTC(year, month - 1, dayNum);
-    for (let i = 1; i <= 14; i++) {
+    for (let i = 1; i <= 45; i++) {
       const d = new Date(base + i * 86400000);
       const y = d.getUTCFullYear();
       const m = String(d.getUTCMonth() + 1).padStart(2, '0');
@@ -305,7 +309,7 @@
       const key = `${y}-${m}-${dd}`;
       const dow = d.getUTCDay();
       if (!PUBLIC_HOLIDAYS_REUNION.has(key) && !EXCEPTIONAL_CLOSURES.has(key) && OPENING_HOURS[dow] !== null) {
-        return DAY_NAMES_FR[dow];
+        return i <= 7 ? DAY_NAMES_FR[dow] : `le ${d.getUTCDate()} ${MONTH_NAMES_FR[d.getUTCMonth()]}`;
       }
     }
     return null;

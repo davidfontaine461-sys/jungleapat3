@@ -580,6 +580,75 @@ h1 em, h2 em, h3 em {
   padding-block: clamp(3rem, 8vw, 6rem);
 }
 
+/* ═══════════════════════════════════════════
+   POST-IT — Fermeture annuelle (temporaire)
+   À retirer après la réouverture du 5 septembre 2026.
+   Bloc autonome : supprimer .hero-postit* + le HTML associé pour désactiver.
+   ═══════════════════════════════════════════ */
+.hero-postit {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.3rem;
+  padding: 1.1rem 1.4rem 1.3rem;
+  margin-bottom: 1.75rem;
+  max-width: 300px;
+  background: #f6dd4e;
+  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.35), transparent 55%);
+  border-radius: 3px;
+  color: var(--c-ink);
+  transform: rotate(-2.5deg);
+  box-shadow: 0 14px 26px -10px rgba(26, 18, 10, 0.4), 0 3px 8px rgba(26, 18, 10, 0.18);
+  animation: fadeUp 0.8s 0.15s var(--ease-out) both, postitFloat 6s 1.2s ease-in-out infinite;
+  z-index: 10;
+}
+.hero-postit::before {
+  content: '';
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  width: 60px;
+  height: 24px;
+  transform: translateX(-50%) rotate(-4deg);
+  background: rgba(237, 226, 195, 0.8);
+  border: 1px solid rgba(26, 18, 10, 0.08);
+  box-shadow: 0 2px 5px rgba(26, 18, 10, 0.15);
+}
+@keyframes postitFloat {
+  0%, 100% { transform: rotate(-2.5deg) translateY(0); }
+  50% { transform: rotate(-1.5deg) translateY(-4px); }
+}
+.hero-postit-title {
+  font-family: var(--f-body);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--c-terracotta-deep);
+}
+.hero-postit-text {
+  font-family: var(--f-hand);
+  font-size: 1.625rem;
+  line-height: 1.15;
+  font-weight: 600;
+  color: var(--c-ink);
+}
+.hero-postit-sub {
+  font-family: var(--f-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--c-ink-soft);
+}
+@media (max-width: 640px) {
+  .hero-postit {
+    max-width: 100%;
+    transform: rotate(-1.5deg);
+    padding: 0.9rem 1.15rem 1.1rem;
+  }
+  .hero-postit-text { font-size: 1.375rem; }
+}
+
 .hero-badges {
   animation: fadeUp 0.8s var(--ease-out) both;
 }
