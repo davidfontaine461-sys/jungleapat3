@@ -1,11 +1,7 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-
-  "//": "Le HTML est genere en local (npm run build) et commite. Vercel ne doit RIEN construire : sans ces trois cles, la presence de package.json lui fait detecter un projet Node, lancer un build et chercher un dossier de sortie inexistant — le deploiement echoue.",
   "framework": null,
   "buildCommand": "",
   "outputDirectory": ".",
-
   "trailingSlash": true,
   "headers": [
     {
@@ -16,14 +12,6 @@
         { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
         { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
       ]
-    },
-    {
-      "source": "/(.*)\\.(jpeg|jpg|webp|png|svg|pdf|ico)",
-      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
-    },
-    {
-      "source": "/(style\\.css|script\\.js)",
-      "headers": [{ "key": "Cache-Control", "value": "public, max-age=3600, must-revalidate" }]
     }
   ]
 }
