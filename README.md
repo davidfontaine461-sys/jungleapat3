@@ -25,6 +25,16 @@ descriptions distincts, canonical, JSON-LD, images, liens internes, sitemap, TOD
 Le HTML généré est **commité** : Vercel déploie le dépôt tel quel, sans étape de build.
 Un `git push` suffit à mettre en ligne.
 
+> ⚠️ **Ne touchez pas à `vercel.json` sans précaution.**
+> Comme le dépôt contient un `package.json`, Vercel détecterait un projet Node,
+> lancerait un build et chercherait un dossier de sortie inexistant — le déploiement
+> échouerait. Les trois clés `framework: null`, `buildCommand: ""` et
+> `outputDirectory: "."` l'en empêchent : elles doivent rester.
+> Vercel rejette aussi toute propriété inconnue dans ce fichier (pas de clé de
+> commentaire `"//"`), et les `source` d'en-têtes suivent la syntaxe path-to-regexp,
+> pas une expression régulière libre.
+> Testez toute modification sur une branche : Vercel en publie une prévisualisation.
+
 ### Ajouter une plante à la page botanique
 
 1. Préparer la photo (retire le bandeau de légende incrusté, recadre, génère `.webp` + `.jpeg`) :
