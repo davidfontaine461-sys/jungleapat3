@@ -1,5 +1,11 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+
+  "//": "Le HTML est genere en local (npm run build) et commite. Vercel ne doit RIEN construire : sans ces trois cles, la presence de package.json lui fait detecter un projet Node, lancer un build et chercher un dossier de sortie inexistant — le deploiement echoue.",
+  "framework": null,
+  "buildCommand": "",
+  "outputDirectory": ".",
+
   "trailingSlash": true,
   "headers": [
     {
