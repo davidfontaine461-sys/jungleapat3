@@ -1,0 +1,20 @@
+
+  <!-- ═══════════════════════════════════════════
+       SVG DEFS GLOBAUX (filtres, patterns, gradients)
+       ═══════════════════════════════════════════ -->
+  <svg class="svg-defs" aria-hidden="true">
+    <defs>
+      <!-- Filtre "papier texturé" -->
+      <filter id="paperTexture" x="0%" y="0%" width="100%" height="100%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="7"/>
+        <feColorMatrix values="0 0 0 0 0.95  0 0 0 0 0.92  0 0 0 0 0.87  0 0 0 0.12 0"/>
+      </filter>
+
+      <!-- Gradient pour le sentier -->
+      <linearGradient id="pathGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#b55a3a" stop-opacity="0.4"/>
+        <stop offset="50%" stop-color="#b55a3a" stop-opacity="0.7"/>
+        <stop offset="100%" stop-color="#b55a3a" stop-opacity="0.4"/>
+      </linearGradient>
+    </defs>
+  </svg>

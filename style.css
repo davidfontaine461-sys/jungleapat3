@@ -1327,7 +1327,7 @@ h1 em, h2 em, h3 em {
   margin-bottom: 1rem;
   font-weight: 600;
 }
-.ecoles-item h4 {
+.ecoles-item h3 {
   font-size: 1.1875rem;
   color: var(--c-cream);
   margin-bottom: 0.6rem;
@@ -1838,7 +1838,7 @@ h1 em, h2 em, h3 em {
   line-height: 1.65;
 }
 
-.footer-col h4 {
+.footer-col h3 {
   font-family: var(--f-body);
   font-size: 0.75rem;
   font-weight: 600;
@@ -1865,6 +1865,16 @@ h1 em, h2 em, h3 em {
   transition: color 0.3s var(--ease);
 }
 .footer-phone:hover { color: var(--c-sand); }
+
+.footer-mail {
+  display: inline-block;
+  margin-top: 0.35rem;
+  color: rgba(245, 240, 232, 0.72);
+  font-size: 0.95rem;
+  word-break: break-word;
+  transition: color 0.3s var(--ease);
+}
+.footer-mail:hover { color: var(--c-cream); }
 
 .footer-bottom {
   display: flex;

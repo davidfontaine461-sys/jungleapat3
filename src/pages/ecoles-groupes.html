@@ -1,0 +1,213 @@
+<!--meta {
+  "out": "ecoles-groupes/index.html",
+  "path": "/ecoles-groupes/",
+  "breadcrumb": "Écoles & groupes",
+  "title": "Sortie scolaire et groupes à La Réunion | Jungle à Pat'",
+  "description": "Sortie scolaire ou visite de groupe à Jungle à Pat', jardin tropical à La Rivière Saint-Louis : carnet pédagogique, sentiers, accueil sur réservation.",
+  "ogImage": "carnet-pedagogique.jpeg",
+  "ogImageAlt": "Le carnet pédagogique de Jungle à Pat' utilisé pendant la visite",
+  "preloadImage": "carnet-pedagogique.webp",
+  "changefreq": "monthly",
+  "priority": "0.9"
+} -->
+{{> head }}
+<body>
+{{> svg-defs }}
+{{> header }}
+
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="/">Accueil</a>
+        <span aria-hidden="true">›</span>
+        <span aria-current="page">Écoles &amp; groupes</span>
+      </nav>
+      <h1>Organiser une sortie scolaire ou une visite de groupe à {{ site.name }}</h1>
+      <p class="page-hero-sub">
+        Faites découvrir un jardin tropical aux élèves ou à votre groupe, directement
+        au contact du vivant. À {{ site.name }}, les sentiers, les plantes et le carnet
+        pédagogique donnent des occasions d'observer, de poser des questions et d'échanger.
+        L'équipe prépare l'accueil avec vous selon l'âge des participants et le temps disponible.
+      </p>
+      <div class="page-hero-cta">
+        <a href="{{ mailHref }}?subject=Demande%20d%27accueil%20d%27un%20groupe%20%E2%80%94%20Jungle%20%C3%A0%20Pat%27&amp;body=Bonjour%2C%0A%0ANous%20souhaitons%20organiser%20une%20visite%20de%20groupe%20%C3%A0%20Jungle%20%C3%A0%20Pat%27.%0A%0A-%20Date%20souhait%C3%A9e%20%3A%20%0A-%20Nombre%20de%20personnes%20%3A%20%0A-%20%C3%82ge%20des%20participants%20%3A%20%0A-%20Structure%20(%C3%A9cole%2C%20centre%20de%20loisirs%2C%20autre)%20%3A%20%0A-%20Nos%20objectifs%20pour%20cette%20visite%20%3A%20%0A%0AMerci%20%21%0A" class="btn btn-light btn-lg">
+          Demander l'accueil d'un groupe
+        </a>
+        <a href="{{ phoneHref }}" class="btn btn-ghost-light btn-lg">
+          Appeler le jardin — {{ contact.phoneDisplay }}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="container prose">
+
+      <p>
+        La visite est à organiser à l'avance pour les groupes de {{ groups.minSize }} personnes
+        et plus. Écrivez-nous en indiquant la date souhaitée, le nombre de personnes,
+        l'âge des enfants le cas échéant et vos objectifs. Nous vous répondrons sur
+        les modalités possibles.
+      </p>
+
+      <h2>Ce que le jardin apporte à un groupe</h2>
+      <ul>
+        <li><strong>Une flore tropicale à hauteur de regard</strong> — découvrir les plantes directement au contact, sans écran.</li>
+        <li><strong>Un apprentissage en plein air</strong> — sortir de la classe, bouger, observer, ressentir.</li>
+        <li><strong>Un carnet pédagogique</strong> — un support ludique pour structurer la visite et la prolonger en classe.</li>
+        <li><strong>Une approche du respect du vivant</strong> — adaptée aux plus jeunes.</li>
+      </ul>
+
+      <h2>Le cadre de l'accueil</h2>
+      <div class="facts-card">
+        <dl>
+          <dt>Jours d'accueil</dt>
+          <dd>Les groupes sont accueillis {{ groups.days }}.</dd>
+          <dt>Effectif</dt>
+          <dd>Jusqu'à {{ groups.maxPupils }} élèves. Réservation obligatoire à partir de {{ groups.minSize }} personnes.</dd>
+          <dt>Durée</dt>
+          <dd>La visite se déroule sur une journée, dans la limite des horaires d'ouverture&nbsp;: {{ groups.endTimeNote }}.</dd>
+          <dt>Tarif</dt>
+          <dd>{{ groups.pupilPrice }} {{ groups.pupilPriceCondition }}.</dd>
+          <dt>Accompagnateurs</dt>
+          <dd>Une place d'accompagnant offerte pour {{ groups.freeAdultPerPupils }} élèves.</dd>
+          <dt>Encadrement</dt>
+          <dd>Il n'y a pas de guide sur le parcours&nbsp;: la visite est guidée par nos carnets pédagogiques et ludiques.</dd>
+        </dl>
+      </div>
+
+      <!-- TODO Nathan : tarif confirmé pour les élèves de moins de 12 ans (6 €).
+           Reste à préciser le tarif applicable aux élèves de 12 ans et plus
+           (collèges, lycées) si vous accueillez ce public. -->
+
+      <h2>Le carnet pédagogique</h2>
+      <p>
+        Dès la première partie du parcours, chaque visiteur peut choisir d'explorer le
+        jardin avec le carnet pédagogique&nbsp;: jeux d'observation, dessins et devinettes
+        autour des plantes. Il transforme la promenade en petite aventure et donne un fil
+        conducteur à la visite.
+      </p>
+
+      <p>
+        Pour les groupes, les carnets sont <strong>partagés par petites équipes de deux ou
+        trois élèves</strong>. Ce sont eux qui guident la visite&nbsp;: aucun guide
+        n'accompagne le groupe sur le parcours.
+      </p>
+
+      <h2>Comment se déroule la venue d'un groupe</h2>
+      <p>
+        L'arrivée se fait à la maison d'accueil, point de départ de la visite.
+        <strong>{{ groups.welcomeBy }} donne toutes les consignes à votre arrivée au jardin.</strong>
+      </p>
+      <p>
+        La classe est ensuite <strong>divisée en petits groupes</strong>, répartis sur
+        différentes parties du jardin et sur différentes activités. Les groupes tournent,
+        de sorte que chacun passe par l'ensemble du parcours sans que tout le monde se
+        retrouve au même endroit en même temps.
+      </p>
+
+      <h3>Repas et pique-nique</h3>
+      <p>
+        Il est possible de manger et de pique-niquer sur place&nbsp;: prévoyez les repas
+        et signalez-le lors de votre demande, pour que nous organisions au mieux votre venue.
+      </p>
+
+      <h3>Sanitaires</h3>
+      <p>
+        Les anciennes toilettes sèches ont laissé place à des <strong>toilettes
+        classiques</strong>. Un <strong>urinoir extérieur</strong> est également à
+        disposition pour les garçons.
+      </p>
+
+      <h2>Préparer la venue de votre groupe</h2>
+
+      <div class="facts-card">
+        <h3>En pratique</h3>
+        <dl>
+          <dt>Réservation</dt>
+          <dd>Obligatoire à partir de {{ groups.minSize }} personnes. Groupes accueillis {{ groups.days }}, jusqu'à {{ groups.maxPupils }} élèves.</dd>
+          <dt>Horaires</dt>
+          <dd>{{ hours.summary }}</dd>
+          <dt>Tarif scolaire</dt>
+          <dd>{{ groups.pupilPrice }} {{ groups.pupilPriceCondition }}. Une place d'accompagnant offerte pour {{ groups.freeAdultPerPupils }} élèves.</dd>
+          <dt>Durée sur place</dt>
+          <dd>Comptez {{ visit.duration }} de parcours. L'accueil d'un groupe se fait sur une journée&nbsp;: {{ groups.endTimeNote }}.</dd>
+          <dt>Adresse</dt>
+          <dd>{{ addressInline }}</dd>
+          <dt>Contact</dt>
+          <dd><a href="{{ mailHref }}">{{ contact.email }}</a> — <a href="{{ phoneHref }}">{{ contact.phoneDisplay }}</a></dd>
+        </dl>
+      </div>
+
+      <h3>À prévoir par les accompagnateurs</h3>
+      <ul>
+        <li><strong>Chaussures fermées</strong> — les sentiers sont par endroits étroits et rocailleux.</li>
+        <li><strong>Anti-moustiques</strong> et de quoi se protéger du soleil.</li>
+        <li><strong>Accessibilité</strong> — le parcours n'est adapté ni aux fauteuils roulants ni aux poussettes. Appelez-nous en cas de doute.</li>
+        <li><strong>Pique-nique</strong> — autorisé sur place.</li>
+      </ul>
+
+      <p>
+        <a href="{{ address.mapsDirectionsUrl }}" target="_blank" rel="noopener" class="btn btn-primary">
+          Obtenir l'itinéraire
+        </a>
+      </p>
+
+      <h2>Questions fréquentes — groupes</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>À partir de combien de personnes faut-il réserver&nbsp;?</summary>
+          <div class="faq-answer"><p>La réservation est obligatoire à partir de {{ groups.minSize }} personnes&nbsp;: écoles, centres de loisirs et groupes organisés. En dessous, la visite est libre et ne nécessite aucune réservation.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Comment réserver pour une classe ou un groupe&nbsp;?</summary>
+          <div class="faq-answer"><p>Écrivez-nous à {{ contact.email }} en précisant la date souhaitée, le nombre de personnes, l'âge des enfants le cas échéant et vos objectifs pour la visite. Nous vous répondrons sur les modalités possibles. Vous pouvez aussi nous appeler au {{ contact.phoneDisplay }}.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Combien d'élèves pouvez-vous accueillir&nbsp;?</summary>
+          <div class="faq-answer"><p>Jusqu'à {{ groups.maxPupils }} élèves. La classe est divisée en petits groupes répartis sur différentes parties du jardin, avec un roulement entre les activités. Les groupes sont accueillis {{ groups.days }}, sur une journée.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Y a-t-il une visite guidée&nbsp;?</summary>
+          <div class="faq-answer"><p>Il n'y a pas de guide qui accompagne le groupe sur le parcours. La visite est guidée par nos carnets pédagogiques et ludiques, partagés par équipes de deux ou trois élèves. {{ groups.welcomeBy }} donne toutes les consignes à votre arrivée au jardin.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Quel est le tarif pour une classe&nbsp;?</summary>
+          <div class="faq-answer"><p>{{ groups.pupilPrice }} {{ groups.pupilPriceCondition }}. Une place d'accompagnant est offerte pour {{ groups.freeAdultPerPupils }} élèves.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Jusqu'à quelle heure le groupe peut-il rester&nbsp;?</summary>
+          <div class="faq-answer"><p>L'accueil se fait sur une journée, dans la limite des horaires d'ouverture&nbsp;: {{ groups.endTimeNote }}.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Les accompagnateurs paient-ils l'entrée&nbsp;?</summary>
+          <div class="faq-answer"><p>Une place d'accompagnant est offerte pour {{ groups.freeAdultPerPupils }} élèves. Précisez le nombre d'adultes présents lors de votre demande.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Y a-t-il des toilettes sur place&nbsp;?</summary>
+          <div class="faq-answer"><p>Oui. Les anciennes toilettes sèches ont laissé place à des toilettes classiques, et un urinoir extérieur est également à disposition pour les garçons.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Le groupe peut-il pique-niquer sur place&nbsp;?</summary>
+          <div class="faq-answer"><p>Oui, le pique-nique est autorisé dans le jardin. Précisez-le lors de votre demande pour que nous puissions organiser au mieux votre venue.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Le parcours est-il accessible en fauteuil roulant ou avec une poussette&nbsp;?</summary>
+          <div class="faq-answer"><p>Non. Les sentiers sont parfois étroits et parfois rocailleux, ce qui rend l'accès difficile voire impossible en fauteuil roulant ou avec une poussette. Appelez-nous au {{ contact.phoneDisplay }} si vous avez un doute sur l'accessibilité pour un participant.</p></div>
+        </details>
+      </div>
+
+      <p style="margin-top:2.5rem">
+        Pour tout le reste — horaires, tarifs, plan du jardin —, rendez-vous sur
+        <a href="/#infos">les infos pratiques</a>, ou découvrez
+        <a href="/jardin-botanique-reunion/">le jardin botanique en détail</a>.
+      </p>
+
+    </div>
+  </section>
+
+{{> footer }}
+{{> scripts }}
+<!--PAGE_SCHEMA-->
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!--meta {
+  "out": "jardin-botanique-reunion/index.html",
+  "path": "/jardin-botanique-reunion/",
+  "breadcrumb": "Le jardin botanique",
+  "title": "Jardin botanique à La Réunion | Jungle à Pat' à Saint-Louis",
+  "description": "Découvrez Jungle à Pat', jardin tropical de 1,5 ha à La Rivière Saint-Louis. Visite libre, plantes, carnet pédagogique et pause café. Horaires et tarifs.",
+  "ogImage": "jardin-1.jpeg",
+  "ogImageAlt": "Végétation tropicale dense le long d'un sentier du jardin Jungle à Pat'",
+  "preloadImage": "jardin-1.webp",
+  "changefreq": "monthly",
+  "priority": "0.9"
+} -->
+{{> head }}
+<body>
+{{> svg-defs }}
+{{> header }}
+
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="/">Accueil</a>
+        <span aria-hidden="true">›</span>
+        <span aria-current="page">Le jardin botanique</span>
+      </nav>
+      <h1>Un jardin botanique tropical à visiter à La Réunion</h1>
+      <p class="page-hero-sub">
+        À {{ address.locality }}, {{ site.name }} invite à découvrir un jardin tropical
+        façonné au fil des décennies. Sur un terrain d'environ {{ visit.areaHectares }} hectare,
+        les sentiers traversent une végétation dense et mènent jusqu'à un point de vue.
+        La visite se fait librement&nbsp;: chacun peut avancer, s'arrêter devant une plante
+        ou simplement profiter de l'ombre.
+      </p>
+      <div class="page-hero-cta">
+        <a href="{{ address.mapsDirectionsUrl }}" target="_blank" rel="noopener" class="btn btn-light btn-lg">
+          Obtenir l'itinéraire
+        </a>
+        <a href="#preparer" class="btn btn-ghost-light btn-lg">
+          Horaires et tarifs
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="container prose">
+
+      <p>
+        Pour regarder de plus près, des panneaux ponctuent le parcours. Un carnet
+        pédagogique accompagne celles et ceux qui souhaitent explorer en jouant et en
+        observant. Après la promenade, le coin café offre une pause à l'ombre&nbsp;;
+        les enfants peuvent profiter du coin marmaille.
+      </p>
+
+      <h2 id="plantes">Une promenade parmi les plantes tropicales</h2>
+      <p>
+        Le jardin rassemble des espèces indigènes, endémiques et exotiques, plantées et
+        entretenues au fil des années. Les sentiers permettent de les découvrir à hauteur
+        de regard, du sous-bois dense jusqu'aux dégagements sur la vallée.
+      </p>
+
+      <div class="plantes-grid">
+{{{ plantesGridHtml }}}
+      </div>
+
+{{{ plantesTodoHtml }}}
+
+      <h2 id="histoire">L'histoire d'un jardin familial</h2>
+      <p>
+        L'histoire du lieu commence en {{ visit.foundedYear }}, lorsque {{ visit.founder }}
+        acquiert le terrain. À l'origine, ce terrain de {{ visit.areaHectares }} hectare
+        accueillait un élevage caprin, au milieu de hautes herbes — ni arbres, ni jungle.
+      </p>
+      <p>
+        Après le passage du cyclone Firinga et des attaques de chiens errants sur le
+        cheptel, {{ visit.founderShort }} choisit de réorienter son projet. Il défriche,
+        nivelle, reconstruit et plante. D'année en année, les plantations transforment
+        l'espace en jardin.
+      </p>
+      <p>
+        Aujourd'hui, {{ visit.team }} accueillent les visiteurs et prolongent cette
+        histoire familiale, en repensant les espaces avec leur propre sensibilité
+        pédagogique et artistique.
+      </p>
+
+      <figure class="histoire-figure">
+        <picture>
+          <source srcset="/jardin-1990.webp" type="image/webp" />
+          <img src="/jardin-1990.jpeg" alt="Le terrain en 1990, couvert de hautes herbes, avant les premières plantations" width="1024" height="1024" loading="lazy"/>
+        </picture>
+        <figcaption>Le terrain en 1990, avant les plantations.</figcaption>
+      </figure>
+
+      <h2 id="visite">Comment se déroule la visite&nbsp;?</h2>
+      <p>
+        L'accueil se fait à la maison, point de départ et d'information. Le parcours se
+        déroule ensuite en deux parties&nbsp;: la <strong>première</strong> se parcourt
+        avec le carnet pédagogique, la <strong>seconde</strong> est consacrée à
+        l'observation. Le sentier mène à un <strong>point de vue</strong> sur la nature
+        environnante, puis redescend vers le <strong>coin café</strong> et le
+        <strong>coin marmaille</strong>.
+      </p>
+      <p>
+        La visite est libre&nbsp;: il n'y a pas d'horaire de départ ni de parcours imposé.
+        Chacun avance à son rythme.
+      </p>
+      <p>
+        <a href="/plan-jungle-a-pat.pdf" target="_blank" rel="noopener" class="info-link">
+          Voir le plan du jardin (PDF)
+          <svg viewBox="0 0 24 24" width="12" height="12" fill="none" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </p>
+
+      <p>
+        Comptez <strong>{{ visit.duration }}</strong> pour faire le tour, davantage si vous
+        prenez le temps de vous arrêter devant les plantes ou de faire une pause au coin café.
+      </p>
+
+      <h2 id="preparer">Préparer sa venue</h2>
+
+      <div class="facts-card">
+        <h3>Informations pratiques</h3>
+        <dl>
+          <dt>Adresse</dt>
+          <dd>{{ addressInline }}, {{ address.region }}</dd>
+          <dt>Horaires</dt>
+          <dd>{{ hours.summary }}</dd>
+          <dt>Durée moyenne</dt>
+          <dd>{{ visit.duration }}</dd>
+          <dt>Tarifs</dt>
+          <dd>{{ prices.summary }}</dd>
+          <dt>Réservation</dt>
+          <dd>Inutile pour les visites individuelles et familiales. Obligatoire à partir de {{ groups.minSize }} personnes.</dd>
+          <dt>Contact</dt>
+          <dd><a href="{{ phoneHref }}">{{ contact.phoneDisplay }}</a> — <a href="{{ mailHref }}">{{ contact.email }}</a></dd>
+        </dl>
+      </div>
+
+      <h3>Sur place</h3>
+      <ul>
+        <li><strong>Chaussures fermées conseillées</strong> — les sentiers sont par endroits étroits et rocailleux.</li>
+        <li><strong>Anti-moustiques</strong> et protection solaire.</li>
+        <li><strong>Accessibilité</strong> — parcours non adapté aux fauteuils roulants ni aux poussettes.</li>
+        <li><strong>Pique-nique</strong> autorisé&nbsp;; <strong>chiens</strong> acceptés en laisse.</li>
+        <li><strong>Météo</strong> — après une forte pluie, les sentiers peuvent être glissants.</li>
+      </ul>
+
+      <p>
+        <a href="{{ address.mapsDirectionsUrl }}" target="_blank" rel="noopener" class="btn btn-primary">
+          Obtenir l'itinéraire
+        </a>
+      </p>
+
+      <h2>Questions fréquentes — la visite</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Où se situe {{ site.name }}&nbsp;?</summary>
+          <div class="faq-answer"><p>Le jardin se trouve au {{ addressInline }}, à {{ address.region }}. Il est situé dans le sud de l'île, à proximité de Saint-Pierre et de Saint-Louis. Pour vous y rendre facilement, utilisez l'itinéraire Google Maps.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Quels jardins botaniques visiter dans le sud de La Réunion&nbsp;?</summary>
+          <div class="faq-answer"><p>Dans le sud de l'île, {{ site.name }} à {{ address.locality }} est un jardin botanique tropical familial. On y découvre une diversité de plantes exotiques, indigènes et endémiques le long de sentiers aménagés, avec des panneaux et un carnet pédagogique. C'est une sortie nature à proximité de Saint-Pierre et de Saint-Louis.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Faut-il réserver pour visiter le jardin&nbsp;?</summary>
+          <div class="faq-answer"><p>Non, aucune réservation n'est nécessaire pour une visite individuelle ou familiale&nbsp;: venez quand vous le souhaitez pendant les horaires d'ouverture. La réservation est demandée à partir de {{ groups.minSize }} personnes — voir la page Écoles &amp; groupes.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Combien de temps dure la visite&nbsp;?</summary>
+          <div class="faq-answer"><p>Comptez {{ visit.duration }} pour parcourir le jardin. La visite est libre&nbsp;: vous avancez à votre rythme et pouvez prolonger par une pause au coin café.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>La visite convient-elle aux enfants&nbsp;?</summary>
+          <div class="faq-answer"><p>Oui. Le carnet pédagogique propose des jeux d'observation, des dessins et des devinettes autour des plantes, et le coin marmaille est prévu pour les plus petits. Attention toutefois&nbsp;: les sentiers sont parfois étroits et rocailleux, et ne conviennent pas aux poussettes.</p></div>
+        </details>
+      </div>
+
+      <p style="margin-top:2.5rem">
+        Vous venez avec une classe ou un groupe&nbsp;? Voir
+        <a href="/ecoles-groupes/">Écoles &amp; groupes</a>. Pour les horaires, les tarifs
+        et le plan du jardin, rendez-vous sur <a href="/#infos">les infos pratiques</a>.
+      </p>
+
+    </div>
+  </section>
+
+{{> footer }}
+{{> scripts }}
+<!--PAGE_SCHEMA-->
+</body>
+</html>

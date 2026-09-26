@@ -1,0 +1,42 @@
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["LocalBusiness", "TouristAttraction", "BotanicGarden"],
+        "@id": "{{ site.baseUrl }}/#business",
+        "name": "{{ site.name }}",
+        "url": "{{ site.baseUrl }}/",
+        "description": "Jardin botanique tropical à La Rivière Saint-Louis, La Réunion. Promenade avec carnet pédagogique, coin café, coin marmaille et sorties scolaires en pleine nature.",
+        "telephone": "{{ contact.phoneE164 }}",
+        "email": "{{ contact.email }}",
+        "image": "{{ site.baseUrl }}/hero-jungle.jpeg",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "{{ address.street }}",
+          "addressLocality": "{{ address.locality }}",
+          "postalCode": "{{ address.postalCode }}",
+          "addressCountry": "{{ address.countryCode }}",
+          "addressRegion": "{{ address.region }}"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": {{ address.latitude }},
+          "longitude": {{ address.longitude }}
+        },
+        "openingHoursSpecification": {{{ openingHoursSpecJson }}},
+        "priceRange": "{{ prices.range }}",
+        "offers": {{{ offersJson }}},
+        "currenciesAccepted": "EUR",
+        "paymentAccepted": "Cash",
+        "inLanguage": "fr",
+        "sameAs": [
+          "{{ address.mapsPlaceUrl }}",
+          "{{ social.tripadvisor }}",
+          "{{ social.facebook }}",
+          "{{ social.instagram }}"
+        ]
+      }
+    ]
+  }
+  </script>

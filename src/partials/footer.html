@@ -1,0 +1,62 @@
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="logo logo-footer">
+          <span class="logo-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none"><path d="M16 3C10 9 6 14 6 19c0 5 4 9 10 9s10-4 10-9c0-5-4-10-10-16z" stroke="currentColor" stroke-width="1.5" fill="currentColor" fill-opacity="0.2"/></svg>
+          </span>
+          <span class="logo-text">
+            <span class="logo-main">{{ site.name }}</span>
+            <span class="logo-sub">Jardin botanique — La Réunion</span>
+          </span>
+        </div>
+        <p>Une parenthèse tropicale à {{ address.locality }}. Un lieu à partager, en famille ou en groupe.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Visiter</h3>
+        <ul>
+          <li><a href="/">Accueil</a></li>
+          <li><a href="/jardin-botanique-reunion/">Le jardin botanique</a></li>
+          <li><a href="/ecoles-groupes/">Écoles &amp; groupes</a></li>
+          <li><a href="/#galerie">Galerie</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Infos</h3>
+        <ul>
+          <li><a href="/#infos">Horaires &amp; tarifs</a></li>
+          <li><a href="/#faq">Questions fréquentes</a></li>
+          <li><a href="/#plan">Plan du jardin</a></li>
+          <li><a href="{{ address.mapsDirectionsUrl }}" target="_blank" rel="noopener">Itinéraire</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <address>
+          {{ address.street }}<br/>
+          {{ address.postalCode }} {{ address.locality }}<br/>
+          {{ address.region }}
+        </address>
+        <a href="{{ phoneHref }}" class="footer-phone">{{ contact.phoneDisplay }}</a>
+        <a href="{{ mailHref }}" class="footer-mail">{{ contact.email }}</a>
+        <div class="footer-social">
+          <a href="{{ social.facebook }}" target="_blank" rel="noopener noreferrer" class="footer-social-link">Facebook</a>
+          <a href="{{ social.instagram }}" target="_blank" rel="noopener noreferrer" class="footer-social-link">Instagram</a>
+          <a href="{{ social.tripadvisor }}" target="_blank" rel="noopener noreferrer" class="footer-social-link">TripAdvisor</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="year">{{ year }}</span> {{ site.name }} — Tous droits réservés.</p>
+      <p class="footer-credit">Jardin botanique tropical à La Réunion</p>
+    </div>
+  </footer>
+
+  <button id="backToTop" aria-label="Retour en haut" title="Retour en haut">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
+      <path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>

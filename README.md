@@ -1,3 +1,57 @@
+# Jungle à Pat' — dépôt du site
+
+## Comment modifier le site
+
+**Ne modifiez jamais `index.html`, `ecoles-groupes/index.html`, `jardin-botanique-reunion/index.html`,
+`sitemap.xml` ou `llms.txt` à la main** : ces fichiers sont générés et vos changements seraient écrasés.
+
+| Ce que vous voulez changer | Fichier à éditer |
+|---|---|
+| Adresse, horaires, tarifs, téléphone, e-mail, fermetures | `src/data/infos.json` |
+| En-tête, pied de page, navigation | `src/partials/` |
+| Contenu d'une page | `src/pages/` |
+| Styles | `style.css` ou `src/partials/styles-extra.html` |
+| Plantes mises en avant | `src/data/plantes.json` |
+
+Puis, à la racine du projet :
+
+```bash
+npm run verify     # régénère le site puis lance les contrôles
+```
+
+`npm run build` régénère seul ; `npm run check` contrôle seul (H1 unique, titles et
+descriptions distincts, canonical, JSON-LD, images, liens internes, sitemap, TODO restants).
+
+Le HTML généré est **commité** : Vercel déploie le dépôt tel quel, sans étape de build.
+Un `git push` suffit à mettre en ligne.
+
+### Ajouter une plante à la page botanique
+
+1. Préparer la photo (retire le bandeau de légende incrusté, recadre, génère `.webp` + `.jpeg`) :
+
+   ```bash
+   python tools/prepare-photo.py "chemin/vers/photo.jpeg" plante-<slug>
+   ```
+
+2. Ajouter l'entrée dans `src/data/plantes.json` :
+
+   ```json
+   { "slug": "balisier", "name": "Balisier", "latin": "Heliconia caribaea",
+     "image": "plante-balisier", "alt": "…", "note": "" }
+   ```
+
+3. `npm run verify`.
+
+Le nom doit venir d'une source sûre — étiquette du jardin ou indication de Nathan.
+La légende vit dans le HTML (`<figcaption>`), jamais incrustée dans l'image : un nom
+gravé dans les pixels n'est pas indexable.
+
+### Horaires
+`src/data/infos.json` est la **source unique**. Le build propage les horaires vers le HTML,
+le JSON-LD, `llms.txt` et le bloc `BUILD:DATA` de `script.js` (badge « Ouvert / Fermé »).
+
+---
+
 # 🌿 Jungle à Pat' — Guide des images
 
 Voici la liste complète de toutes les photos à placer dans le même dossier que ton fichier `index.html`.

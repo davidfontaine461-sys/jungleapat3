@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="{{ site.themeColor }}" />
+
+  <!-- SEO -->
+  <title>{{ page.title }}</title>
+  <meta name="description" content="{{ page.description }}" />
+  <meta name="google-site-verification" content="{{ site.googleSiteVerification }}" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.gaId }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ site.gaId }}');
+  </script>
+
+  <meta property="og:title" content="{{ page.title }}" />
+  <meta property="og:description" content="{{ page.description }}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="{{ site.locale }}" />
+  <meta property="og:image" content="{{ site.baseUrl }}/{{ page.ogImage }}" />
+  <meta property="og:image:alt" content="{{ page.ogImageAlt }}" />
+  <meta property="og:url" content="{{ page.url }}" />
+  <meta property="og:site_name" content="{{ site.name }}" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{{ page.title }}" />
+  <meta name="twitter:description" content="{{ page.description }}" />
+  <meta name="twitter:image" content="{{ site.baseUrl }}/{{ page.ogImage }}" />
+
+  <link rel="preload" as="image" href="/{{ page.preloadImage }}" type="image/webp" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..700&family=Inter+Tight:wght@300;400;500;600;700&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/style.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/favicon.svg" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="{{ page.url }}" />
+  <link rel="alternate" hreflang="fr-RE" href="{{ page.url }}" />
+  <link rel="alternate" hreflang="fr" href="{{ page.url }}" />
+  <link rel="alternate" hreflang="x-default" href="{{ page.url }}" />
+
+  <!-- ═══════════════════════════════════════════
+       STYLES COMPLÉMENTAIRES (partagés par toutes les pages)
+       ═══════════════════════════════════════════ -->
+{{> styles-extra }}
+
+  <!-- Structured Data — identité du lieu, commune à toutes les pages.
+       Les schémas propres à une page (FAQPage, BreadcrumbList) sont dans son corps. -->
+{{> schema-localbusiness }}
+</head>

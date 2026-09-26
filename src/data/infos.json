@@ -1,0 +1,103 @@
+{
+  "_comment": "SOURCE UNIQUE des informations repetees. Toute modification ici se propage a toutes les pages, au JSON-LD, a llms.txt et aux horaires de script.js via `npm run build`. Ne jamais editer ces valeurs directement dans index.html.",
+
+  "site": {
+    "name": "Jungle à Pat'",
+    "baseUrl": "https://jungleapat.re",
+    "lang": "fr",
+    "locale": "fr_FR",
+    "themeColor": "#1a3a2e",
+    "gaId": "G-LG8SG151W7",
+    "googleSiteVerification": "CgHMsmvH1ew6NQcvXatBdr7my3i3SL98q5mIXHa5Z6M"
+  },
+
+  "contact": {
+    "email": "jungleapat@gmail.com",
+    "phoneDisplay": "0693 05 40 38",
+    "phoneE164": "+262693054038"
+  },
+
+  "address": {
+    "street": "213 route Hubert Delisle",
+    "postalCode": "97421",
+    "locality": "La Rivière Saint-Louis",
+    "region": "La Réunion",
+    "countryCode": "RE",
+    "latitude": -21.3392,
+    "longitude": 55.3878,
+    "mapsPlaceUrl": "https://maps.app.goo.gl/3u2f4X8AaPa1He429",
+    "mapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=213+route+Hubert+Delisle+97421+La+Riviere+Saint-Louis",
+    "mapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&destination=213+route+Hubert+Delisle+97421+La+Riviere+Saint-Louis"
+  },
+
+  "hours": {
+    "note": "Confirme par Nathan le 26/09/2026. dow = Date.getDay() (0 = dimanche). open/close null = ferme.",
+    "week": [
+      { "dow": 1, "label": "Lundi",    "open": null, "close": null },
+      { "dow": 2, "label": "Mardi",    "open": null, "close": null },
+      { "dow": 3, "label": "Mercredi", "open": 9,    "close": 16 },
+      { "dow": 4, "label": "Jeudi",    "open": 9,    "close": 14 },
+      { "dow": 5, "label": "Vendredi", "open": 9,    "close": 14 },
+      { "dow": 6, "label": "Samedi",   "open": 9,    "close": 16 },
+      { "dow": 0, "label": "Dimanche", "open": 9,    "close": 16 }
+    ],
+    "summary": "Ouvert du mercredi au dimanche. Mercredi, samedi et dimanche de 9h à 16h ; jeudi et vendredi de 9h à 14h. Fermé le lundi et le mardi.",
+    "badgeFallback": "Ouvert mer. → dim."
+  },
+
+  "prices": {
+    "adult": { "label": "Adulte", "amount": "8.00", "display": "8 €" },
+    "child": { "label": "Enfant (3-12 ans)", "amount": "6.00", "display": "6 €" },
+    "toddler": { "label": "Moins de 3 ans", "amount": "0.00", "display": "Gratuit" },
+    "range": "6€–8€",
+    "summary": "8 € par adulte, 6 € par enfant de 3 à 12 ans, gratuit pour les moins de 3 ans."
+  },
+
+  "groups": {
+    "_comment": "Confirme par Nathan le 26/09/2026.",
+    "minSize": 10,
+    "maxPupils": 70,
+    "days": "du mercredi au vendredi",
+    "duration": "sur une journée, dans la limite des horaires d'ouverture",
+    "endTimeNote": "jusqu'à 16h le mercredi, jusqu'à 14h les jeudi et vendredi",
+    "pupilPrice": "6 €",
+    "pupilPriceCondition": "par élève de moins de 12 ans",
+    "freeAdultPerPupils": 10,
+    "guidedTour": false,
+    "bookingRule": "La réservation est obligatoire à partir de 10 personnes (écoles, centres de loisirs, groupes organisés). Aucune réservation n'est nécessaire en dessous.",
+    "welcomeBy": "Manon"
+  },
+
+  "visit": {
+    "areaHectares": "1,5",
+    "foundedYear": "1990",
+    "founder": "Joseph Clément Fontaine",
+    "founderShort": "Joseph Clément",
+    "team": "Manon, Nathanaël et Clémence",
+    "duration": "1 à 2 heures"
+  },
+
+  "social": {
+    "instagram": "https://www.instagram.com/jungle_a_pat/",
+    "facebook": "https://www.facebook.com/p/Jungle-%C3%A0-pat-61579385826846/",
+    "tripadvisor": "https://www.tripadvisor.com/Attraction_Review-g17677152-d33986524-Reviews-Jungle_a_pat-La_Riviere_Saint_Louis_Arrondissement_of_Saint_Pierre.html"
+  },
+
+  "closures": {
+    "publicHolidays": [
+      "2026-01-01", "2026-04-06", "2026-05-01", "2026-05-08",
+      "2026-05-14", "2026-05-25", "2026-07-14", "2026-08-15",
+      "2026-11-01", "2026-11-11", "2026-12-20", "2026-12-25",
+      "2027-01-01", "2027-03-29", "2027-05-01", "2027-05-06",
+      "2027-05-08", "2027-05-17", "2027-07-14", "2027-08-15",
+      "2027-11-01", "2027-11-11", "2027-12-20", "2027-12-25"
+    ],
+    "exceptional": [
+      "2026-08-17", "2026-08-18", "2026-08-19", "2026-08-20", "2026-08-21",
+      "2026-08-22", "2026-08-23", "2026-08-24", "2026-08-25", "2026-08-26",
+      "2026-08-27", "2026-08-28", "2026-08-29", "2026-08-30", "2026-08-31",
+      "2026-09-01", "2026-09-02", "2026-09-03", "2026-09-04"
+    ],
+    "annual2027": "TODO"
+  }
+}

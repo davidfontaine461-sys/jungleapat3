@@ -1,0 +1,66 @@
+[
+  {
+    "_comment": "Plantes mises en avant sur /jardin-botanique-reunion/. Noms fournis par Nathan ou relevés sur les photos légendées du jardin — ne rien ajouter ici sans source. `note` et `location` sont facultatifs et restent vides tant qu'ils ne sont pas validés.",
+    "slug": "balisier",
+    "name": "Balisier",
+    "latin": "Heliconia caribaea",
+    "image": "plante-balisier",
+    "alt": "Inflorescence rouge vif d'un balisier (Heliconia caribaea) dressée entre les tiges, au jardin Jungle à Pat'",
+    "location": "Visible dans tout le jardin",
+    "note": ""
+  },
+  {
+    "slug": "colocasia-mojito",
+    "name": "Colocasia « Mojito »",
+    "latin": "Colocasia esculenta 'Mojito'",
+    "image": "plante-colocasia-mojito",
+    "alt": "Grandes feuilles en cœur de Colocasia esculenta 'Mojito', vert clair marbrées de taches vert sombre",
+    "location": "Visible dans tout le jardin",
+    "note": "En créole réunionnais, on appelle « songe » aussi bien les Colocasia que les Alocasia — ce sont pourtant des plantes bien distinctes."
+  },
+  {
+    "slug": "guzmania",
+    "name": "Guzmania",
+    "latin": "Guzmania monostachia",
+    "image": "plante-guzmania",
+    "alt": "Rosette de Guzmania monostachia : bractées rouge vif entourant un épi de fleurs jaunes, au cœur de longues feuilles vertes",
+    "location": "",
+    "note": ""
+  },
+  {
+    "slug": "epee-flamboyante",
+    "name": "Épée flamboyante",
+    "latin": "Lutheria splendens",
+    "image": "plante-epee-flamboyante",
+    "alt": "Épi dressé rouge et jaune d'une épée flamboyante (Lutheria splendens) émergeant de sa rosette de feuilles",
+    "location": "",
+    "note": ""
+  },
+  {
+    "slug": "queen-of-colors",
+    "name": "Queen of Colors",
+    "latin": "Aechmea fendleri",
+    "image": "plante-queen-of-colors",
+    "alt": "Inflorescence ramifiée d'Aechmea fendleri « Queen of Colors » : bractées roses et fleurs violettes sur une hampe rouge",
+    "location": "",
+    "note": ""
+  },
+  {
+    "slug": "gingembre-coquille",
+    "name": "Gingembre coquille",
+    "latin": "Alpinia zerumbet",
+    "image": "plante-gingembre-coquille",
+    "alt": "Grappe retombante de boutons nacrés bordés de rose du gingembre coquille (Alpinia zerumbet), fleurs ouvertes au cœur jaune",
+    "location": "",
+    "note": ""
+  },
+  {
+    "slug": "tillandsia",
+    "name": "Tillandsia raquette",
+    "latin": "Tillandsia cyanea",
+    "image": "plante-tillandsia",
+    "alt": "Épi rose aplati en forme de raquette du Tillandsia cyanea, d'où s'ouvrent deux fleurs violettes",
+    "location": "",
+    "note": ""
+  }
+]
