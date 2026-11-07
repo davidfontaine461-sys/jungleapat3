@@ -132,6 +132,42 @@
   </section>
 
   <!-- ═══════════════════════════════════════════
+       ÉVÉNEMENT TEMPORAIRE — Marché de Noël 2026
+       Masqué automatiquement après le 13/12/2026 (heure de La Réunion)
+       par le script en bas de section. À retirer du source ensuite.
+       ═══════════════════════════════════════════ -->
+  <section class="event-banner" id="marche-de-noel" data-event-end="2026-12-13" aria-labelledby="event-title">
+    <div class="container">
+      <div class="event-card reveal">
+        <div class="event-text">
+          <span class="eyebrow">— Save the date · 3e édition</span>
+          <h2 id="event-title">Sunflower Garden&nbsp;: <em>le marché de Noël de la jungle.</em></h2>
+          <p class="event-dates">Samedi 12 &amp; dimanche 13 décembre 2026</p>
+          <p>
+            Pour la troisième année, des artisans s'installent au cœur du jardin pour un marché de Noël
+            sous les arbres. Une belle occasion de trouver des cadeaux faits main et de (re)découvrir la jungle.
+          </p>
+        </div>
+        <figure class="event-poster">
+          <picture>
+            <source srcset="/marche-noel-2026.webp" type="image/webp" />
+            <img src="/marche-noel-2026.jpeg" alt="Affiche du marché de Noël Sunflower Garden : samedi 12 et dimanche 13 décembre 2026 à Jungle à Pat', Rivière Saint-Louis" width="1320" height="950" loading="lazy"/>
+          </picture>
+        </figure>
+      </div>
+    </div>
+    <script>
+      (function () {
+        var el = document.getElementById('marche-de-noel');
+        var end = el && el.getAttribute('data-event-end');
+        if (!end) return;
+        var today = new Intl.DateTimeFormat('en-CA', { timeZone: 'Indian/Reunion' }).format(new Date());
+        if (today > end) el.remove();
+      })();
+    </script>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
        SECTION 01 — HISTOIRE DU JARDIN
        Ambiance vintage, vieux carnet, sépia, papier jauni
        ═══════════════════════════════════════════ -->
