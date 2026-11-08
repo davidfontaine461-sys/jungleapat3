@@ -1467,6 +1467,25 @@
 
     <div class="container hero-inner">
       <div class="hero-left">
+
+      <!-- ═══ POST-IT TEMPORAIRE — Fermeture du 11/11/2026 ═══
+           Retiré automatiquement après le 11/11/2026 (heure de La Réunion)
+           par le script ci-dessous. À supprimer du source ensuite. -->
+      <p class="hero-postit" id="postit-11-novembre" data-postit-end="2026-11-11" role="note">
+        <span class="hero-postit-title">Fermeture exceptionnelle</span>
+        <span class="hero-postit-text">Fermé le mercredi 11 novembre</span>
+        <span class="hero-postit-sub">On vous retrouve dès le jeudi 12, à 9h 🌿</span>
+      </p>
+      <script>
+        (function () {
+          var el = document.getElementById('postit-11-novembre');
+          var end = el && el.getAttribute('data-postit-end');
+          if (!end) return;
+          var today = new Intl.DateTimeFormat('en-CA', { timeZone: 'Indian/Reunion' }).format(new Date());
+          if (today > end) el.remove();
+        })();
+      </script>
+
       <div class="hero-badges">
         <span class="hero-badge">
           <span class="hero-badge-dot" aria-hidden="true"></span>
